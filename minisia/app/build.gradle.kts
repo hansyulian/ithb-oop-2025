@@ -30,5 +30,5 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass.set("pertemuan1.App")
+    mainClass.set("minisia.App")
 }

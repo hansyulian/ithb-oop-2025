@@ -1,4 +1,4 @@
-package pertemuan1.database;
+package minisia.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
