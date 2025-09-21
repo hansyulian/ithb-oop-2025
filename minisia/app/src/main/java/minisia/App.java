@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+import minisia.controllers.MenuController;
 import minisia.database.Database;
 import minisia.models.Jurusan;
 import minisia.models.Mahasiswa;
@@ -510,43 +511,17 @@ public class App {
     // System.out.println("0. Keluar");
     // }
 
-    // public static void printMenuUtama() {
-    // System.out.println("");
-    // System.out.println("Menu utama: ");
-    // System.out.println("1. Menu jurusan");
-    // System.out.println("2. Menu mata kuliah");
-    // System.out.println("3. Menu mahasiswa");
-    // System.out.println("0. Keluar ");
-    // }
+    private MenuController menuControler;
 
-    // public static void start() {
-    // connection = Database.connect();
-    // printMenuUtama();
-    // int input = readInt();
-    // while (input != 0) {
-    // switch (input) {
-    // case 1 -> {
-    // handleMenuJurusan();
-    // break;
-    // }
-    // case 2 -> {
-    // handleMenuMataKuliah();
-    // break;
-    // }
-    // case 3 -> {
-    // handleMenuMahasiswa();
-    // break;
-    // }
-    // default -> {
-    // break;
-    // }
-    // }
-    // printMenuUtama();
-    // input = readInt();
-    // }
-    // }
+    public App() {
+        menuControler = new MenuController();
+    }
+
+    public void start() {
+        menuControler.handle();
+    }
 
     public static void main(String[] args) {
-        // start();
+        new App().start();
     }
 }
