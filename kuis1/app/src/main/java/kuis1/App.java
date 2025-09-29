@@ -1,0 +1,234 @@
+
+package kuis1;
+
+import java.util.ArrayList;
+import java.util.List;
+
+enum ShapeName {
+    SPHERE,
+    CYLINDER,
+    CUBOID,
+    CUBE,
+}
+
+abstract class Object3D {
+    private ShapeName name;
+
+    public Object3D(ShapeName name) {
+        this.name = name;
+    }
+
+    public ShapeName getName() {
+        return this.name;
+    }
+
+    public abstract int getVolume();
+
+    public abstract int getSurfaceArea();
+}
+
+class Sphere extends Object3D {
+    private int radius;
+
+    public Sphere(int radius) {
+        super(ShapeName.SPHERE);
+        this.radius = radius;
+    }
+
+    public int getRadius() {
+        return radius;
+    }
+
+    @Override
+    public int getVolume() {
+        return (int) (4.0 / 3.0 * Math.PI * radius * radius * radius);
+    }
+
+    @Override
+    public int getSurfaceArea() {
+        return (int) (4.0 * Math.PI * radius * radius);
+    }
+}
+
+class Cylinder extends Object3D {
+    private int radius;
+    private int height;
+
+    public Cylinder(int radius, int height) {
+        super(ShapeName.CYLINDER);
+        this.radius = radius;
+        this.height = height;
+    }
+
+    public int getRadius() {
+        return radius;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    @Override
+    public int getVolume() {
+        return (int) (Math.PI * radius * radius * height);
+    }
+
+    @Override
+    public int getSurfaceArea() {
+        return (int) (2.0 * Math.PI * radius * (radius + height));
+    }
+}
+
+class Cuboid extends Object3D {
+    private int length;
+    private int width;
+    private int height;
+
+    public Cuboid(int length, int width, int height) {
+        this(ShapeName.CUBOID, length, width, height);
+    }
+
+    public Cuboid(ShapeName shapeName, int length, int width, int height) {
+        super(shapeName);
+        this.length = length;
+        this.width = width;
+        this.height = height;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    @Override
+    public int getVolume() {
+        return length * width * height;
+    }
+
+    @Override
+    public int getSurfaceArea() {
+        return 2 * (length * width + length * height + width * height);
+    }
+}
+
+class Cube extends Cuboid {
+
+    public Cube(int side) {
+        super(ShapeName.CUBE, side, side, side);
+    }
+}
+
+public class App {
+
+    private Object3D generateObject(int radius) {
+        return new Sphere(radius);
+    }
+
+    private Object3D generateObject(int radius, int height) {
+        return new Cylinder(radius, height);
+    }
+
+    private Object3D generateObject(int length, int width, int height) {
+        return new Cuboid(length, width, height);
+    }
+
+    private Object3D generateObject(int side, boolean isCube) {
+        if (isCube)
+            return new Cube(side);
+        else
+            return new Sphere(side);
+    }
+
+    private int actionInput() {
+        System.out.println("Menu:");
+        System.out.println("1. Add new 3D object");
+        System.out.println("2. Print all");
+        System.out.println("0. Exit");
+        System.out.print("Your choice: ");
+        return Util.getInt();
+    }
+
+    public App() {
+        List<Object3D> objects = new ArrayList<>();
+        int input = actionInput();
+        while (input != 0) {
+            switch (input) {
+                case 1:
+                    System.out.println("    1. Sphere");
+                    System.out.println("    2. Cylinder");
+                    System.out.println("    3. Cuboid");
+                    System.out.println("    4. Cube");
+                    System.out.print("    Your choice: ");
+                    int shape = Util.getInt();
+                    switch (shape) {
+                        case 1: {
+                            System.out.print("        Input the radius of the sphere: ");
+                            int radius = Util.getInt();
+                            objects.add(generateObject(radius));
+                            break;
+                        }
+                        case 2: {
+                            System.out.print("        Input the radius of the cylinder: ");
+                            int radius = Util.getInt();
+                            System.out.print("        Input the height of the cylinder: ");
+                            int height = Util.getInt();
+                            objects.add(generateObject(radius, height));
+                            break;
+                        }
+                        case 3: {
+                            System.out.print("        Input the length of the cuboid: ");
+                            int length = Util.getInt();
+                            System.out.print("        Input the width of the cuboid: ");
+                            int width = Util.getInt();
+                            System.out.print("        Input the height of the cuboid: ");
+                            int height = Util.getInt();
+                            objects.add(generateObject(length, width, height));
+                            break;
+                        }
+                        case 4: {
+                            System.out.print("        Input the side length of the cube: ");
+                            int side = Util.getInt();
+                            objects.add(generateObject(side, true));
+                            break;
+                        }
+                    }
+                    break;
+
+                case 2:
+                    for (Object3D object : objects) {
+                        String objectName = "unknown";
+                        switch (object.getName()) {
+                            case SPHERE:
+                                objectName = "Sphere";
+                                break;
+                            case CYLINDER:
+                                objectName = "Cylinder";
+                                break;
+                            case CUBOID:
+                                objectName = "Cuboid";
+                                break;
+                            case CUBE:
+                                objectName = "Cube";
+                                break;
+                        }
+                        System.out.println("    Name: " + objectName + ", Volume: " + object.getVolume()
+                                + ", Surface Area: " + object.getSurfaceArea());
+                    }
+                    break;
+            }
+            input = actionInput();
+        }
+    }
+
+    public static void main(String[] args) {
+        new App();
+    }
+
+}
