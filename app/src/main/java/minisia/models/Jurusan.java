@@ -20,4 +20,9 @@ public class Jurusan {
     public String getNama() {
         return nama;
     }
+
+    @Override
+    public String toString() {
+        return "kode: " + kode + ", nama: " + nama;
+    }
 }
