@@ -1,8 +1,8 @@
-package kuis1;
+package kuis1.util;
 
 import java.util.Scanner;
 
-public class Util {
+public class CLIUtil {
   private static Scanner scanner;
 
   static {

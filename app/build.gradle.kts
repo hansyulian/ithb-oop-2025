@@ -31,4 +31,5 @@ java {
 application {
     // Define the main class for the application.
     mainClass.set("minisia.App")
+    mainClass.set("kuis1.App")
 }
