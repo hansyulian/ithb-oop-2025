@@ -34,7 +34,7 @@ public abstract class Object3D {
     }
   }
 
-  public abstract int getVolume();
+  public abstract double getVolume();
 
-  public abstract int getSurfaceArea();
+  public abstract double getSurfaceArea();
 }

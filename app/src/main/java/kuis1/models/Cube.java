@@ -2,11 +2,11 @@ package kuis1.models;
 
 public class Cube extends Cuboid {
 
-  public Cube(int side) {
+  public Cube(double side) {
     super(ShapeName.CUBE, side, side, side);
   }
 
-  public int getSide() {
+  public double getSide() {
     return this.getHeight();
   }
 

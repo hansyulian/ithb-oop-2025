@@ -2,24 +2,24 @@
 package kuis1.models;
 
 public class Sphere extends Object3D {
-  private int radius;
+  private double radius;
 
-  public Sphere(int radius) {
+  public Sphere(double radius) {
     super(ShapeName.SPHERE);
     this.radius = radius;
   }
 
-  public int getRadius() {
+  public double getRadius() {
     return radius;
   }
 
   @Override
-  public int getVolume() {
-    return (int) (4.0 / 3.0 * Math.PI * radius * radius * radius);
+  public double getVolume() {
+    return (4.0 / 3.0 * Math.PI * radius * radius * radius);
   }
 
   @Override
-  public int getSurfaceArea() {
-    return (int) (4.0 * Math.PI * radius * radius);
+  public double getSurfaceArea() {
+    return (4.0 * Math.PI * radius * radius);
   }
 }

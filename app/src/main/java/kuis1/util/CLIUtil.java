@@ -13,4 +13,7 @@ public class CLIUtil {
     return scanner.nextInt();
   }
 
+  public static double getDouble() {
+    return scanner.nextDouble();
+  }
 }
