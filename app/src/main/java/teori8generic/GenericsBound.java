@@ -1,4 +1,4 @@
-package minggu8;
+package teori8generic;
 
 import java.util.List;
 

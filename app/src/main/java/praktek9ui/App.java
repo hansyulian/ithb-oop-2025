@@ -1,7 +1,8 @@
-package minggu9;
+package praktek9ui;
 
 import java.awt.Color;
 import java.awt.Component;
+
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
