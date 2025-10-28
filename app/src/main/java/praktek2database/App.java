@@ -1,10 +1,10 @@
-package pertemuan2;
+package praktek2database;
 
 import java.util.List;
 import java.util.Scanner;
 
-import pertemuan2.models.Mahasiswa;
-import pertemuan2.repository.MahasiswaRepository;
+import praktek2database.models.Mahasiswa;
+import praktek2database.repository.MahasiswaRepository;
 
 public class App {
 

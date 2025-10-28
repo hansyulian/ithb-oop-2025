@@ -1,4 +1,4 @@
-package pertemuan2.database;
+package praktek2database.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

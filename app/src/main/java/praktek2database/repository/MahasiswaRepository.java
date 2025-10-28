@@ -1,4 +1,4 @@
-package pertemuan2.repository;
+package praktek2database.repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import pertemuan2.database.Database;
-import pertemuan2.models.Mahasiswa;
+import praktek2database.database.Database;
+import praktek2database.models.Mahasiswa;
 
 public class MahasiswaRepository {
     private static final Connection conn;
@@ -37,7 +37,7 @@ public class MahasiswaRepository {
         try {
             PreparedStatement stmt = conn.prepareStatement(sql);
             ResultSet resultSet = stmt.executeQuery();
-            
+
             while (resultSet.next()) {
                 result.add(new Mahasiswa(resultSet.getString("nim"), resultSet.getString("nama")));
             }

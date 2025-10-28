@@ -15,6 +15,7 @@ public class Teori9d2Exception {
     String newLabel = label + " / 2";
     System.out.println(newLabel + " +");
     method3(newLabel);
+    System.out.println("check");
     if (value == 10) {
       throw new Exception("test method 2");
     }
@@ -32,8 +33,6 @@ public class Teori9d2Exception {
 
   public Teori9d2Exception() throws Exception {
     method1("r");
-    method2("r");
-    method3("r");
   }
 
   public static void main(String[] args) throws Exception {

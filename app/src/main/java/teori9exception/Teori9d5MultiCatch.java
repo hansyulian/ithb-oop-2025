@@ -15,20 +15,21 @@ class WhatIsException extends Exception {
 public class Teori9d5MultiCatch {
 
   public static void main(String[] args) {
-    int i = 10;
+    int i = 20;
     try {
       System.out.println(1);
       if (i == 10) {
         throw new HansException("Test exception");
       }
+      System.out.println(11);
       if (i == 20) {
         throw new WhatIsException("what");
       }
       System.out.println(2);
-    } catch (HansException e) {
+    } catch (WhatIsException e) {
       System.out.println(33);
       System.out.println(e.getMessage());
-    } catch (WhatIsException e) {
+    } catch (Exception e) {
       System.out.println(44);
       System.out.println(e.getMessage());
     }

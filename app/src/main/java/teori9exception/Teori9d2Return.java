@@ -15,6 +15,7 @@ public class Teori9d2Return {
     String newLabel = label + " / 2";
     System.out.println(newLabel + " +");
     method3(newLabel);
+    System.out.println("check");
     if (value == 10) {
       return;
     }
@@ -32,8 +33,6 @@ public class Teori9d2Return {
 
   public Teori9d2Return() {
     method1("r");
-    method2("r");
-    method3("r");
   }
 
   public static void main(String[] args) {

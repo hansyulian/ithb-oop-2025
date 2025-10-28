@@ -1,4 +1,4 @@
-package pertemuan2.models;
+package praktek2database.models;
 
 public class Mahasiswa {
   public String nim;

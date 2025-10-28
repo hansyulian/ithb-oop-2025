@@ -1,8 +1,11 @@
 package teori9exception;
 
-class HansException extends Exception {
-  public HansException(String message) {
+class Hans2Exception extends Exception {
+  int type;
+
+  public Hans2Exception(String message, int type) {
     super("From Hans Exception: " + message);
+    this.type = type;
   }
 }
 
@@ -13,12 +16,13 @@ public class Teori9d4CustomException {
     try {
       System.out.println(1);
       if (i == 10) {
-        throw new HansException("Test exception");
+        throw new Hans2Exception("Test exception", 5);
       }
       System.out.println(2);
-    } catch (HansException e) {
+    } catch (Hans2Exception e) {
       System.out.println(3);
       System.out.println(e.getMessage());
+      System.out.println("Exception type" + e.type);
       System.out.println(4);
     }
     System.out.println(5);
