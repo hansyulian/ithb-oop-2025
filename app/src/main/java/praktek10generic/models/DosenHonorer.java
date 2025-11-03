@@ -10,4 +10,13 @@ public class DosenHonorer extends Staff {
     this.honorPerSks = honorPerSks;
   }
 
+  @Override
+  public String toString() {
+    return "DosenHonorer{" +
+        "nik='" + nik + '\'' +
+        ", nama='" + nama + '\'' +
+        ", tipe=" + tipe +
+        ", honorPerSks=" + honorPerSks +
+        '}';
+  }
 }

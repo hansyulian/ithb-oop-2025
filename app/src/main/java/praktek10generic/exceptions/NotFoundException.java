@@ -1,0 +1,7 @@
+package praktek10generic.exceptions;
+
+public class NotFoundException extends Exception {
+  public NotFoundException() {
+    super("NotFoundException");
+  }
+}

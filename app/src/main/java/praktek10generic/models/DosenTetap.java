@@ -10,4 +10,13 @@ public class DosenTetap extends Staff {
     this.gajiPokok = gajiPokok;
   }
 
+  @Override
+  public String toString() {
+    return "DosenTetap{" +
+        "nik='" + nik + '\'' +
+        ", nama='" + nama + '\'' +
+        ", tipe=" + tipe +
+        ", gajiPokok=" + gajiPokok +
+        '}';
+  }
 }
