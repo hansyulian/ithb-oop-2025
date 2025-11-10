@@ -5,7 +5,7 @@ public class Cylinder extends Object3D {
   private double height;
 
   public Cylinder(double radius, double height) {
-    super(ShapeName.CYLINDER);
+    super(ObjectName.CYLINDER);
     this.radius = radius;
     this.height = height;
   }

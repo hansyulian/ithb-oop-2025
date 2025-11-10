@@ -1,21 +1,13 @@
 package kuis1.models;
 
-enum ShapeName {
-  SPHERE,
-  CYLINDER,
-  CUBOID,
-  CUBE,
-  UNKNOWN,
-}
-
 public abstract class Object3D {
-  private ShapeName name;
+  private ObjectName name;
 
-  public Object3D(ShapeName name) {
+  public Object3D(ObjectName name) {
     this.name = name;
   }
 
-  public ShapeName getName() {
+  public ObjectName getName() {
     return this.name;
   }
 

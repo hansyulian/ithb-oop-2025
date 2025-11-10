@@ -5,7 +5,7 @@ public class Sphere extends Object3D {
   private double radius;
 
   public Sphere(double radius) {
-    super(ShapeName.SPHERE);
+    super(ObjectName.SPHERE);
     this.radius = radius;
   }
 

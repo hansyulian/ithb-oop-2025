@@ -80,9 +80,15 @@ public class SampleGeneric {
     Box<SampleDataStructure> box = new Box<>(new SampleDataStructure("Hans", 0));
     Doubleable x1 = box.get(); // x1 SampleDataStructure
     SampleDataStructure x2 = box.get(); // x2 SampleDataStructure
-    // Box2 box2 = new Box2(new SampleDataStructure("Hans", 0));
-    // Doubleable y1 = box2.get(); // y1 Doubleable
-    // SampleDataStructure y2 = box2.get(); // y2 Doubleable
+    Box<Integer> box2 = new Box(10);
+    Doubleable y1 = box2.get(); // y1 Doubleable
+    SampleDataStructure y2 = box2.get(); // y2 Doubleable
+    boxPrinter(box);
+    boxPrinter(box2);
+  }
+
+  public boxPrinter(Box<?> box){
+    System.out.println("The box content is"+box.get());
   }
 
   public static void main(String[] args) {

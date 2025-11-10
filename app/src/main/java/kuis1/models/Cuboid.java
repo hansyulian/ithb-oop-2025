@@ -6,10 +6,10 @@ public class Cuboid extends Object3D {
   private double height;
 
   public Cuboid(double length, double width, double height) {
-    this(ShapeName.CUBOID, length, width, height);
+    this(ObjectName.CUBOID, length, width, height);
   }
 
-  public Cuboid(ShapeName shapeName, double length, double width, double height) {
+  public Cuboid(ObjectName shapeName, double length, double width, double height) {
     super(shapeName);
     this.length = length;
     this.width = width;
